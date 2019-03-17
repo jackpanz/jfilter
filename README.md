@@ -9,11 +9,11 @@ Version requirement.
 # spring 4.2+ 4.3+
 ```java
 com.bj.json.spring4.JFilterHttpMessageConverter
-```java
+```
 # spring 5.0+
 ```java
 com.bj.json.spring5.JFilterHttpMessageConverter
-```java
+```
 
 # spring boot
 ```
