@@ -16,10 +16,10 @@ com.bj.json.spring5.JFilterHttpMessageConverter
 ```
 
 # spring boot
-```
+```java
 @ComponentScan({"com.bj.json"})
 ```
-```
+```java
 @Order(0)
 @Bean
 public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMapper objectMapper) {
@@ -29,7 +29,7 @@ public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMap
 ```
 
 # spring mvc
-```
+```java
 <context:component-scan base-package="com.bj.json"/>
 <mvc:annotation-driven>
     <mvc:message-converters>
@@ -46,7 +46,7 @@ public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMap
 ```
 # Usage
 Only Object
-```
+```java
 @JFilter(clazz = User.class, property = "id,status")
 @ResponseBody
 @RequestMapping("users")
@@ -61,7 +61,7 @@ public List users() {
 ```
 Multiple Object
 
-```
+```java
 @JFilters({
         @JFilter(clazz = User.class, property = "id,status")
         , @JFilter(clazz = Admin.class, property = "password,create_date")
