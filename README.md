@@ -78,4 +78,18 @@ public List maps() {
 }
 ```
 
+RestController
+
+```java
+@JFilter(clazz = User.class, property = "id,status")
+@GetMapping("rmaps")
+public List maps() {
+    return new ArrayList() {{
+        add(TController.getData());
+        add(TController.getData());
+        add(TController.getData());
+        add(TController.getData());
+    }};
+}
+```
 
