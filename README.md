@@ -30,18 +30,10 @@ public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMap
 
 # spring mvc
 ```
+<context:component-scan base-package="com.bj.json"/>
 <mvc:annotation-driven>
     <mvc:message-converters>
         <bean class="com.bj.json.spring4.JFilterHttpMessageConverter">
-            <property name="objectMapper">
-                <bean class="com.fasterxml.jackson.databind.ObjectMapper">
-                    <property name="dateFormat">
-                          <bean class="java.text.SimpleDateFormat">
-                              <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
-                          </bean>
-                      </property>
-                </bean>
-            </property>
             <property name="supportedMediaTypes">
                 <list>
                     <value>text/html;charset=UTF-8</value>
@@ -51,10 +43,9 @@ public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMap
         </bean>
     </mvc:message-converters>
 </mvc:annotation-driven>
-<context:component-scan base-package="com.bj.json"/>
 ```
 # Usage
-filter only Object
+Only Object
 ```
 @JFilter(clazz = User.class, property = "id,status")
 @ResponseBody
@@ -68,7 +59,7 @@ public List users() {
     }};
 }
 ```
-filter Multiple Objects
+Multiple Object
 
 ```
 @JFilters({
