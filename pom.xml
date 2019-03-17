@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>bj-java</groupId>
+    <artifactId>jfilter-root</artifactId>
+    <packaging>pom</packaging>
+    <version>1.1-SNAPSHOT</version>
+    <name>jfilter-root</name>
+
+    <modules>
+        <module>jfilter</module>
+        <module>spring4</module>
+        <module>spring5</module>
+    </modules>
+
+    <properties>
+
+    </properties>
+
+
+
+</project>
