@@ -2,12 +2,20 @@
 Dynamic filter object properties in the controller.
 Support spring mvc and spring boot.
 Version requirement.
-- spring 4.2+ .
+- spring 4.2+ 4.3+ .
 - spring 5.0+ .
 - jackson 2.8.0+ .
 
-# spring boot
+# spring 4.2+ 4.3+
+```
+com.bj.json.spring4.JFilterHttpMessageConverter
+```
+# spring 5.0+
+```
+com.bj.json.spring5.JFilterHttpMessageConverter
+```
 
+# spring boot
 ```
 @ComponentScan({"com.bj.json"})
 ```
@@ -21,9 +29,6 @@ public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMap
 ```
 
 # spring mvc
-
-## 11111111111
-
 ```
 <mvc:annotation-driven>
     <mvc:message-converters>
