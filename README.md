@@ -6,30 +6,45 @@ Version requirement.
 - spring 5.0+ .
 - jackson 2.8.0+ .
 
-A Java library for sending notifications via APNS using Apple's new HTTP/2 API.
-This library uses OkHttp.
-Previous versions included support for Jetty's client,
-however, we've removed that due to instability of the Jetty client.
+# spring boot
 
-**Note:** Ensure that you have Jetty's ALPN JAR (OkHttp requires it) in your boot classpath. [See here for more information](http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html).
-This is required until Java 9 is released, as Java 8 does not have native support for HTTP/2.
-
-## Installation
-- Clone this repository, and add it as a dependent maven project
-- Maven
 ```
-<dependency>
-  <groupId>com.clevertap.apns</groupId>
-  <artifactId>apns-http2</artifactId>
-  <version>1.0.3</version>
-  <type>pom</type>
-</dependency>
+@ComponentScan({"com.bj.json"})
 ```
-- Gradle  
 ```
-compile 'com.clevertap.apns:apns-http2:1.0.3'
+@Order(0)
+@Bean
+public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMapper objectMapper) {
+    JFilterHttpMessageConverter messageConverter = new JFilterHttpMessageConverter(objectMapper);
+    return messageConverter;
+}
 ```
 
+# spring mvc
+```
+<mvc:annotation-driven>
+    <mvc:message-converters>
+        <bean class="com.bj.json.spring4.JFilterHttpMessageConverter">
+            <property name="objectMapper">
+                <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                    <property name="dateFormat">
+                          <bean class="java.text.SimpleDateFormat">
+                              <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
+                          </bean>
+                      </property>
+                </bean>
+            </property>
+            <property name="supportedMediaTypes">
+                <list>
+                    <value>text/html;charset=UTF-8</value>
+                    <value>application/json;charset=UTF-8</value>
+                </list>
+            </property>
+        </bean>
+    </mvc:message-converters>
+</mvc:annotation-driven>
+<context:component-scan base-package="com.bj.json"/>
+```
 ## Usage
 
 ### Create a client
