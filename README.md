@@ -6,6 +6,22 @@ Version requirement.
 - spring 5.0+ .
 - jackson 2.8.0+ .
 
+# Download
+
+Gradle:
+```gradle
+dependencies {
+  implementation 'com.github.jackpanz:jfilter:1.0.1'
+}
+```
+Maven:
+```xml
+<dependency>
+  <groupId>com.github.jackpanz</groupId>
+  <artifactId>jfilter</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
 # spring 4.2+ 4.3+
 ```java
 com.github.jackpanz.json.spring4.JFilterHttpMessageConverter
