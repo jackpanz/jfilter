@@ -4,17 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!--
-        第一种上传方式
-        mvn deploy:deploy-file -DgroupId=com.maccloud -DartifactId=core -Dversion=2.3.2 -Dpackaging=jar -Dfile=C:\core-2.3.2.jar -Durl=http://maven.maccloudtech.cn/repository/maven-releases/ -DrepositoryId=releases
-        第二种上传方式
-        mvn deploy
+    mvn clean deploy -P release -pl jfilter
     -->
 
     <modelVersion>4.0.0</modelVersion>
     <name>jfilter</name>
     <groupId>com.github.jackpanz</groupId>
     <artifactId>jfilter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <properties>
