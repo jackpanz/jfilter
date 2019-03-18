@@ -1,7 +1,7 @@
-package com.bj.json.spring5;
+package com.github.jackpanz.json.spring5;
 
-import com.bj.json.BeanJFilter;
-import com.bj.json.JFilterValue;
+import com.github.jackpanz.json.BeanJFilter;
+import com.github.jackpanz.json.JFilterValue;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;

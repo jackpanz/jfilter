@@ -1,11 +1,10 @@
-package com.bj.json.spring4;
+package com.github.jackpanz.json.spring4;
 
-import com.bj.json.BeanJFilter;
-import com.bj.json.JFilterValue;
+import com.github.jackpanz.json.BeanJFilter;
+import com.github.jackpanz.json.JFilterValue;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.PrettyPrinter;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
@@ -14,7 +13,6 @@ import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonValue;
-import org.springframework.util.ClassUtils;
 import org.springframework.util.TypeUtils;
 
 import java.io.IOException;

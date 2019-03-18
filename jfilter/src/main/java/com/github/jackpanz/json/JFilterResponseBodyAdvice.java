@@ -1,7 +1,7 @@
-package com.bj.json;
+package com.github.jackpanz.json;
 
-import com.bj.json.annotation.JFilter;
-import com.bj.json.annotation.JFilters;
+import com.github.jackpanz.json.annotation.JFilter;
+import com.github.jackpanz.json.annotation.JFilters;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

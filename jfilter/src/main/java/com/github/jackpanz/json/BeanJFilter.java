@@ -1,6 +1,6 @@
-package com.bj.json;
+package com.github.jackpanz.json;
 
-import com.bj.json.annotation.JFilter;
+import com.github.jackpanz.json.annotation.JFilter;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ser.BeanPropertyWriter;

@@ -1,6 +1,6 @@
-package com.bj.json;
+package com.github.jackpanz.json;
 
-import com.bj.json.annotation.JFilter;
+import com.github.jackpanz.json.annotation.JFilter;
 import org.springframework.http.converter.json.MappingJacksonValue;
 
 public class JFilterValue extends MappingJacksonValue {

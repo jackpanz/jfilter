@@ -1,7 +1,7 @@
 package com.test;
 
-import com.bj.json.spring5.JFilterHttpMessageConverter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.jackpanz.json.spring5.JFilterHttpMessageConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @Configuration
 @SpringBootApplication
-@ComponentScan({"com.bj.json","com.test"})
+@ComponentScan({"com.github.jackpanz.json","com.test"})
 public class Application extends SpringBootServletInitializer implements WebMvcConfigurer {
 
     /**
@@ -34,7 +34,7 @@ public class Application extends SpringBootServletInitializer implements WebMvcC
 
     @Order(0)
     @Bean
-    public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMapper objectMapper) {
+    public JFilterHttpMessageConverter jFilterHttpMessageConverter(ObjectMapper objectMapper) {
         JFilterHttpMessageConverter messageConverter = new JFilterHttpMessageConverter(objectMapper);
         return messageConverter;
     }

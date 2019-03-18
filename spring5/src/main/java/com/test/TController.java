@@ -1,14 +1,16 @@
 package com.test;
 
-import com.bj.json.annotation.JFilter;
-import com.bj.json.annotation.JFilters;
+import com.github.jackpanz.json.annotation.JFilter;
+import com.github.jackpanz.json.annotation.JFilters;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 
 @Controller
+@RestController
 @RequestMapping
 public class TController {
 

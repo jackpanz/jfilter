@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.bj</groupId>
+    <groupId>com.github.jackpanz</groupId>
     <artifactId>jfilter-spring5</artifactId>
     <packaging>war</packaging>
     <version>1.1-SNAPSHOT</version>
@@ -25,7 +25,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.bj</groupId>
+            <groupId>com.github.jackpanz</groupId>
             <artifactId>jfilter</artifactId>
             <version>${jfilter.version}</version>
         </dependency>

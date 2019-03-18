@@ -1,4 +1,4 @@
-package com.bj.json.annotation;
+package com.github.jackpanz.json.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
