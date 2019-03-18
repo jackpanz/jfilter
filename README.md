@@ -6,23 +6,39 @@ Version requirement.
 - spring 5.0+ .
 - jackson 2.8.0+ .
 
+# Download
+
+Gradle:
+```gradle
+dependencies {
+  implementation 'com.github.jackpanz:jfilter:1.0.1'
+}
+```
+Maven:
+```xml
+<dependency>
+  <groupId>com.github.jackpanz</groupId>
+  <artifactId>jfilter</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
 # spring 4.2+ 4.3+
 ```java
-com.bj.json.spring4.JFilterHttpMessageConverter
+com.github.jackpanz.json.spring4.JFilterHttpMessageConverter
 ```
 # spring 5.0+
 ```java
-com.bj.json.spring5.JFilterHttpMessageConverter
+com.github.jackpanz.json.spring5.JFilterHttpMessageConverter
 ```
 
 # spring boot
 ```java
-@ComponentScan({"com.bj.json"})
+@ComponentScan({"com.github.jackpanz.json"})
 ```
 ```java
 @Order(0)
 @Bean
-public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMapper objectMapper) {
+public JFilterHttpMessageConverter jFilterHttpMessageConverter(ObjectMapper objectMapper) {
     JFilterHttpMessageConverter messageConverter = new JFilterHttpMessageConverter(objectMapper);
     return messageConverter;
 }
@@ -30,10 +46,10 @@ public JFilterHttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMap
 
 # spring mvc
 ```java
-<context:component-scan base-package="com.bj.json"/>
+<context:component-scan base-package="com.github.jackpanz.json"/>
 <mvc:annotation-driven>
     <mvc:message-converters>
-        <bean class="com.bj.json.spring4.JFilterHttpMessageConverter">
+        <bean class="com.github.jackpanz.json.spring4.JFilterHttpMessageConverter">
             <property name="supportedMediaTypes">
                 <list>
                     <value>text/html;charset=UTF-8</value>
@@ -51,12 +67,7 @@ Only Object
 @ResponseBody
 @RequestMapping("users")
 public List users() {
-    return new ArrayList() {{
-        add(getUser());
-        add(getUser());
-        add(getUser());
-        add(getUser());
-    }};
+    ...
 }
 ```
 Multiple Object
@@ -69,12 +80,7 @@ Multiple Object
 @ResponseBody
 @RequestMapping("maps")
 public List maps() {
-    return new ArrayList() {{
-        add(getData());
-        add(getData());
-        add(getData());
-        add(getData());
-    }};
+   ...
 }
 ```
 
@@ -84,12 +90,7 @@ RestController
 @JFilter(clazz = User.class, property = "id,status")
 @GetMapping("rmaps")
 public List maps() {
-    return new ArrayList() {{
-        add(TController.getData());
-        add(TController.getData());
-        add(TController.getData());
-        add(TController.getData());
-    }};
+    ...
 }
 ```
 
